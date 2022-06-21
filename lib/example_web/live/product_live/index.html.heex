@@ -1,0 +1,65 @@
+<h1>Listing Products</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal scope_helper={@loc.scope_helper} return_to={Routes.product_index_path(@socket, :index)}>
+    <.live_component
+      module={ExampleWeb.ProductLive.FormComponent}
+      id={@product.id || :new}
+      title={@page_title}
+      action={@live_action}
+      product={@product}
+      return_to={Routes.product_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="products">
+    <%= for product <- @products do %>
+      <tr id={"product-#{product.id}"}>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.product_show_path(@socket, :show, product) %></span>
+          <span><%= live_patch "Edit", to: Routes.product_index_path(@socket, :edit, product) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: product.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<span><%= live_patch "New Product", to: Routes.product_index_path(@socket, :new) %></span>
+
+<div style="margin-top: 3rem">
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="width: 200px">Locale:</td><td><%= @loc.locale %></td></tr>
+    <tr><td>Helper:</td><td><%= @loc.scope_helper %></td></tr>
+    <tr>
+      <td>Switch local route:</td>
+      <td>
+        <!-- ExampleWeb.LocalizedRoutes is aliased as Loc in view_helpers() -->
+        <!-- loc_route is imported from PhxLocalizedRoutes.Helpers -->
+          <%= for {_slug, opts} <- Loc.scopes(), opts.assign.scope_helper != @loc.scope_helper do %>
+              <span><%= link to: loc_route(OriginalRoutes.product_index_path(@socket, :index), opts) do %><button><%= opts.assign.name %></button><% end %></span>
+          <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
