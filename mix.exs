@@ -7,7 +7,7 @@ defmodule Example.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: extra_compilers() ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -69,5 +69,12 @@ defmodule Example.MixProject do
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
+  end
+
+  defp extra_compilers do
+    case Version.match?(System.version(), "< 1.14.0") do
+      true -> [:gettext]
+      false -> []
+    end
   end
 end
