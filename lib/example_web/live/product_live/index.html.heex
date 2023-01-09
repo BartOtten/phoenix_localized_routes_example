@@ -22,7 +22,42 @@
     </.link>
   </:action>
 </.table>
+<div style="margin-top: 3rem">
+<table class="table-auto">
+  <thead class="text-left">
+    <tr>
+      <th>Label</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="text-left w-48">Locale:</td><td><%= @loc.locale %></td></tr>
+    <tr><td>Audience:</td><td><%= @loc.name %></td></tr>
+    <tr><td>Contact:</td><td><%= @loc.contact %></td></tr>
+    <tr><td>Helper:</td><td><%= @loc.scope_helper || "nil" %></td></tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td>Navigate to:</td>
+      <td>
+        <!-- ExampleWeb.LocalizedRoutes is aliased as Loc in view_helpers() -->
+        <!-- loc_route is imported from PhxLocalizedRoutes.Helpers -->
+        <!-- when using helper: href={loc_route(OriginalRoutes.product_index_path(@socket, :index), opts)} -->
 
+          <%= for {_slug, opts} <- Loc.scopes(), opts.assign.scope_helper != @loc.scope_helper do %>
+              <span>
+              <.link
+                class="phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3 text-sm font-semibold leading-6 text-white active:text-white/80"
+                href={loc_route(~p"/products", opts)}
+              >
+                  <%= opts.assign.name %>
+                </.link>&nbsp;
+              </span>
+          <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <.modal
   :if={@live_action in [:new, :edit]}
   id="product-modal"

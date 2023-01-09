@@ -1,0 +1,102 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+msgid "confirm"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:83
+msgid "confirm_email"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+msgid "edit"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+msgid "log_in"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+msgid "log_out"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+msgid "new"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+msgid "products"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+msgid "register"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+msgid "reset_password"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:83
+#: lib/example_web/router.ex:83
+#: lib/example_web/router.ex:83
+msgid "settings"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:93
+msgid "show"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:68
+#: lib/example_web/router.ex:83
+#: lib/example_web/router.ex:83
+#: lib/example_web/router.ex:83
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+#: lib/example_web/router.ex:93
+msgid "users"
+msgstr ""

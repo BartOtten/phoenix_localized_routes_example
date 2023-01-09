@@ -27,6 +27,9 @@ defmodule ExampleWeb do
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
+
+      # Localized Router
+      use PhxLocalizedRoutes.Router
     end
   end
 
@@ -47,6 +50,7 @@ defmodule ExampleWeb do
       import ExampleWeb.Gettext
 
       unquote(verified_routes())
+      unquote(loc_helpers())
     end
   end
 
@@ -56,6 +60,7 @@ defmodule ExampleWeb do
         layout: {ExampleWeb.Layouts, :app}
 
       unquote(html_helpers())
+      on_mount(ExampleWeb.LocalizedRoutes.LiveHelpers)
     end
   end
 
@@ -93,6 +98,7 @@ defmodule ExampleWeb do
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
+      unquote(loc_helpers())
     end
   end
 
@@ -102,6 +108,22 @@ defmodule ExampleWeb do
         endpoint: ExampleWeb.Endpoint,
         router: ExampleWeb.Router,
         statics: ExampleWeb.static_paths()
+    end
+  end
+
+  defp loc_helpers do
+    quote do
+      import PhxLocalizedRoutes.Helpers
+      import ExampleWeb.Router.VerifiedRoutes
+
+      alias ExampleWeb.LocalizedRoutes, as: Loc
+
+      # Uncomment the next two lines when using Phoenix Route Helpers
+      # alias ExampleWeb.Router.Helpers, as: OriginalRoutes
+      # alias ExampleWeb.Router.Helpers.Localized, as: Routes
+
+      # Uncomment the next line when overriding the default Verified Route sigil
+      import Phoenix.VerifiedRoutes, except: [sigil_p: 2]
     end
   end
 

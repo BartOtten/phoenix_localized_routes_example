@@ -33,7 +33,7 @@ defmodule Example.MixProject do
   defp deps do
     [
       {:argon2_elixir, "~> 3.0"},
-      {:phoenix, "~> 1.7.0-rc.0", override: true},
+      {:phoenix, "~> 1.7.0-rc.1", override: true},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
       {:postgrex, ">= 0.0.0"},
@@ -51,7 +51,9 @@ defmodule Example.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      # {:phoenix_localized_routes, path: '../phoenix_localized_routes/'}
+      {:phoenix_localized_routes, "~> 0.1.3-rc.0"}
     ]
   end
 

@@ -1,0 +1,61 @@
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "confirm"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:87
+msgid "confirm_email"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "edit"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:72
+msgid "log_in"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "log_out"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "new"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "products"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:72
+msgid "register"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:72
+msgid "reset_password"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:87
+msgid "settings"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:98
+msgid "show"
+msgstr ""
+
+#, elixir-autogen, elixir-format
+#: lib/example_web/router.ex:72
+#: lib/example_web/router.ex:87
+#: lib/example_web/router.ex:98
+msgid "users"
+msgstr ""
